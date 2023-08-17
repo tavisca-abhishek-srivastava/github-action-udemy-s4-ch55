@@ -45,6 +45,7 @@ jobs:
             package.json
   deploy:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
